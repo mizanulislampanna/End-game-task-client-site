@@ -5,19 +5,13 @@ const ToDo = () => {
   const [completeTasks, setCompleteTasks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/todo")
+    fetch("https://bearded-syrup-33319.herokuapp.com/todo")
       .then((res) => res.json())
       .then((data) => setToDo(data));
   }, []);
 
   const handleChange = (id) => {
-    const complete = toDo.filter((comtask) => comtask._id === id);
-    // console.log(complete);
-    const finalComplete = [...completeTasks, ...complete];
-    setCompleteTasks(finalComplete);
-    console.log(completeTasks);
-
-    const url = `http://localhost:5000/todo/${id}`;
+    const url = `https://bearded-syrup-33319.herokuapp.com/todo/${id}`;
     fetch(url, {
       method: "DELETE",
     })

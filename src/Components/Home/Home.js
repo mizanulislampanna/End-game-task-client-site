@@ -6,7 +6,7 @@ const Home = () => {
   const [toDo, setToDo] = useState();
 
   const onSubmit = (data) => {
-    const url = `http://localhost:5000/todo`;
+    const url = `https://bearded-syrup-33319.herokuapp.com/todo`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -21,7 +21,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/todo")
+    fetch("https://bearded-syrup-33319.herokuapp.com/todo")
       .then((res) => res.json())
       .then((data) => setToDo(data));
   }, []);
